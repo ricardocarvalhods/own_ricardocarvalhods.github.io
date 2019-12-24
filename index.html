@@ -1,21 +1,12 @@
-<html>
-  <head>
-    
-  </head>
+<div id="content">
+# Welcome
 
-  <body>
-    <div id="content">
-    # Welcome
-
-    Hello.  Welcome to my **website** now.
-    </div>
-    
-    <script src="showdown.min.js"></script>
-    <script>
-    var conv = new showdown.Converter();
-    var txt = document.getElementById('content').innerHTML;
-    console.log(txt);
-    document.getElementById('content').innerHTML = conv.makeHtml(txt);
-    </script>
-  </body>
-</html>
+Hello.  Welcome to my **website**, new.
+</div>
+<script src="showdown.min.js"></script>
+<script>
+var conv = new showdown.Converter();
+var txt = document.getElementById('content').innerHTML;
+console.log(txt);
+document.getElementById('content').innerHTML = conv.makeHtml(txt);
+</script>
