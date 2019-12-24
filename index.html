@@ -4,8 +4,8 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/showdown.js"></script>
     <script>
+      var conv = new showdown.Converter({emoji: true});
       function BODYtoMKDW(divid) {
-        var conv = new showdown.Converter();
         var txt = document.getElementById(divid).innerHTML;
         console.log(txt);
         document.getElementById(divid).innerHTML = conv.makeHtml(txt);
@@ -16,7 +16,6 @@
           if (this.readyState == 4) {
             if (this.status == 200) {
               responseMD = this.responseText;
-              var conv = new showdown.Converter();
               responseHTML = conv.makeHtml(responseMD)
               document.getElementById(divid).innerHTML = responseHTML;
             }
