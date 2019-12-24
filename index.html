@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="showdown.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/showdown.min.js"></script>
     <script>
       function BODYtoMKDW() {
         var conv = new showdown.Converter();
@@ -14,8 +15,13 @@
   <body id="content">
 # Ricardo Carvalho
 
-Hi, welcome to my **website**, under construction.
+Empty.
   </body>
+  <script> 
+    $(function(){
+      $("#content").load("home.md"); 
+    });
+  </script> 
   <script>BODYtoMKDW()</script>
 </html>
 
