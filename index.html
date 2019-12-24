@@ -1,18 +1,21 @@
 <html>
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.4.0/showdown.min.js"></script>
+    
   </head>
 
-  <body id="content">
+  <body>
+    <div id="content">
     # Welcome
 
-    Hello.  Welcome to my **website** here.
-  </body>
-  
-  <script>
+    Hello.  Welcome to my **website** now.
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.4.0/showdown.min.js"></script>
+    <script>
     var conv = new showdown.Converter();
     var txt = document.getElementById('content').innerHTML;
     console.log(txt);
     document.getElementById('content').innerHTML = conv.makeHtml(txt);
-  </script>
+    </script>
+  </body>
 </html>
