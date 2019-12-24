@@ -10,6 +10,9 @@
         console.log(txt);
         document.getElementById(divid).innerHTML = conv.makeHtml(txt);
       }
+      function transfer(frid, divid){
+         
+      }
     </script>
   </head>
   <body>
@@ -18,9 +21,10 @@
 
 Empty.
     </div> 
-    <iframe src="home.md" seamless frameborder="0"></iframe>
+    <div id="home></div><iframe id="homefr" src="home.md" seamless style="width:0;height:0;border:0; border:none;"></iframe>
   <script> 
     BODYtoMKDW('content');
+    transfer('homefr', 'home');
     BODYtoMKDW('home');
   </script>
   </body>
