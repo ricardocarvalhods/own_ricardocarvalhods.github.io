@@ -1,12 +1,21 @@
-<div id="content">
-# Welcome
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="showdown.min.js"></script>
+    <script>
+      function BODYtoMKDW() {
+        var conv = new showdown.Converter();
+        var txt = document.getElementById('content').innerHTML;
+        console.log(txt);
+        document.getElementById('content').innerHTML = conv.makeHtml(txt);
+      }
+    </script>
+  </head>
+  <body id="content">
+    # Ricardo Carvalho
 
-Hello.  Welcome to my **website**, new.
-</div>
-<script src="showdown.min.js"></script>
-<script>
-var conv = new showdown.Converter();
-var txt = document.getElementById('content').innerHTML;
-console.log(txt);
-document.getElementById('content').innerHTML = conv.makeHtml(txt);
-</script>
+    Hi, welcome to my **website**, under construction.
+  </body>
+  <script>BODYtoMKDW()</script>
+</html>
+
