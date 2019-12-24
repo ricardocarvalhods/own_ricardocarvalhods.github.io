@@ -2,7 +2,7 @@
 <html>
   <head>
     <script src="js/jquery.min.js"></script>
-    <script src="js/showdown.min.js"></script>
+    <script src="js/showdown.js"></script>
     <script>
       function BODYtoMKDW(divid) {
         var conv = new showdown.Converter();
@@ -10,7 +10,7 @@
         console.log(txt);
         document.getElementById(divid).innerHTML = conv.makeHtml(txt);
       }
-      function transfer(divid, filename){
+      function contentFromFile(divid, filename){
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4) {
@@ -36,7 +36,7 @@ Empty.
     <div id="home"></div>
   <script> 
     BODYtoMKDW('content');
-    transfer('home', 'home.md');
+    contentFromFile('home', 'home.md');
   </script>
   </body>
 </html>
