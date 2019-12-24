@@ -10,8 +10,20 @@
         console.log(txt);
         document.getElementById(divid).innerHTML = conv.makeHtml(txt);
       }
-      function transfer(frid, divid){
-         
+      function transfer(divid, filename){
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4) {
+            if (this.status == 200) {
+              responseMD = this.responseText;
+              var conv = new showdown.Converter();
+              responseHTML = conv.makeHtml(responseMD)
+              document.getElementById(divid).innerHTML = responseHTML;
+            }
+          }
+        }
+        xhttp.open("GET", filename, true);
+        xhttp.send();
       }
     </script>
   </head>
@@ -21,11 +33,10 @@
 
 Empty.
     </div> 
-    <div id="home></div><iframe id="homefr" src="home.md" seamless style="width:0;height:0;border:0; border:none;"></iframe>
+    <div id="home"></div>
   <script> 
     BODYtoMKDW('content');
-    transfer('homefr', 'home');
-    BODYtoMKDW('home');
+    transfer('home', 'home.md');
   </script>
   </body>
 </html>
