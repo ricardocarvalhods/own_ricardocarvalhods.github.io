@@ -4,11 +4,11 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/showdown.min.js"></script>
     <script>
-      function BODYtoMKDW() {
+      function BODYtoMKDW(divid) {
         var conv = new showdown.Converter();
-        var txt = document.getElementById('content').innerHTML;
+        var txt = document.getElementById(divid).innerHTML;
         console.log(txt);
-        document.getElementById('content').innerHTML = conv.makeHtml(txt);
+        document.getElementById(divid).innerHTML = conv.makeHtml(txt);
       }
     </script>
   </head>
@@ -18,11 +18,10 @@
 
 Empty.
     </div> 
+    <div id='home'><iframe src="home.md" seamless></iframe></div>
   <script> 
-    $(function(){
-      $("#content").load("home.md"); 
-    });
-    BODYtoMKDW();
+    BODYtoMKDW('content');
+    BODYtoMKDW('home');
   </script>
   </body>
 </html>
