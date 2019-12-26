@@ -21,14 +21,9 @@
     <script defer src="js/katex.min.js"></script>
     <script defer src="js/auto-render.min.js"></script>
 
-    <script>
-      var conv = new showdown.Converter({emoji: true});
-      function BODYtoMKDW(divid) {
-        var txt = document.getElementById(divid).innerHTML;
-        console.log(txt);
-        document.getElementById(divid).innerHTML = conv.makeHtml(txt);
-      }
-	    
+    <script src="js/ricardo.js"></script>
+	  
+    <script>	    
       function loadTitlesFromFolder(folder){
         fetch('https://api.github.com/repos/ricardocarvalhods/ricardocarvalhods.github.io/contents/' + folder)
           .then(response => response.json())
@@ -73,8 +68,6 @@
       }
     </script>
     
-    <script src="js/ricardo.js"></script>
-    
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -110,8 +103,8 @@
       //BODYtoMKDW('content');
       contentFromFile("about.md", document.getElementById("aboutcontent")); // Entire Page
       loadTitlesFromFolder('news'); // Titles
-      //loadFolder('research'); // Titles
-      //loadFolder('blog'); // Titles
+      //loadTitlesWithThumbnailsFromFolder('research'); // Titles with Thumbnails
+      //loadTitlesWithThumbnailsFromFolder('blog'); // Titles with Thumbnails
     </script>
   </body>
 </html>
