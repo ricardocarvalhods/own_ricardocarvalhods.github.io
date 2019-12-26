@@ -28,6 +28,37 @@
         console.log(txt);
         document.getElementById(divid).innerHTML = conv.makeHtml(txt);
       }
+	    
+      function loadTitlesFromFolder(folder){
+        fetch('https://api.github.com/repos/ricardocarvalhods/ricardocarvalhods.github.io/contents/' + folder)
+          .then(response => response.json())
+          .then(data => {
+		final_mkdw = ""
+		for(data_i in data){
+		    name_split = data[data_i].name.split("-");
+		    i_date = ""
+		    i_title = ""
+		    for(vl in name_split){
+			if(vl == 0){
+			    i_date = name_split[vl]	
+			}
+		        else if(vl == 1 || vl == 2){
+		            i_date = name_split[vl] + "/" + i_date
+			}
+			else if(vl == 3){
+			    i_title = name_split[vl]
+			}
+			else if(vl > 3){
+			    i_title = i_title + " " + name_split[vl]
+			}
+		    }
+		    final_mkdw = final_mkdw + "<br/> - \[**" + i_date + "**\]: [" + i_title + "](" + folder + "/" + data[data_i].name +  ") \n"
+		}
+		document.getElementById(folder + 'content')).innerHTML = conv.makeHtml(final_mkdw);
+		console.log(final_mkdw)
+	}).catch(error => console.error(error))
+      }
+	    
       function loadFolder(folder){
         fetch('https://api.github.com/repos/ricardocarvalhods/ricardocarvalhods.github.io/contents/' + folder)
           .then(response => response.json())
@@ -76,7 +107,7 @@
     <script> 
       //BODYtoMKDW('content');
       contentFromFile("about.md", document.getElementById("aboutcontent"))
-      //loadFolder('news');
+      loadTitlesFromFolder('news');
       //loadFolder('research');
       //loadFolder('blog');
     </script>
