@@ -7,7 +7,7 @@
 
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
     <script defer src="js/katex.min.js"></script>
-    <script defer src="js/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <script defer src="js/auto-render.min.js"></script>
 
 
     <script>
@@ -32,7 +32,7 @@
               responseMDtex = responseMD //katex.renderToString(responseMD, {throwOnError: false});
               responseHTML = conv.makeHtml(responseMDtex)
               document.getElementById(filename).innerHTML = responseHTML;
-              renderMathInElement(document.body);
+              renderMathInElement(elem);
             }
             if (this.status == 404) {
               document.getElementById(filename).innerHTML = "Page not found.";
@@ -47,16 +47,8 @@
   <body>
     <div id="content">
 # Ricardo Carvalho
-
-## Welcome
-
-This is my personal website, **under construction**. Still, welcome. :clap:
-
-Formulas work? Here is one $$s^3 + \mathbf{B} + a_2$$ simple.
-
-The end.
       
-Empty...
+So far it is empty...
     </div> 
   <script> 
     BODYtoMKDW('content');
