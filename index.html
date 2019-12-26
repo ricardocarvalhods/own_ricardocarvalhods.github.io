@@ -32,7 +32,8 @@
               responseMDtex = responseMD //katex.renderToString(responseMD, {throwOnError: false});
               responseHTML = conv.makeHtml(responseMDtex)
               document.getElementById(filename).innerHTML = responseHTML;
-              renderMathInElement(elem, {delimiters:[{left: "$$", right: "$$", display: false}]});
+              renderMathInElement(elem, {delimiters:[{left: "$$", right: "$$", display: false}, 
+                                                     {left: "$$\\", right: "\\$$", display: true}]});
             }
             if (this.status == 404) {
               document.getElementById(filename).innerHTML = "Page not found.";
