@@ -32,7 +32,7 @@
               responseMDtex = responseMD //katex.renderToString(responseMD, {throwOnError: false});
               responseHTML = conv.makeHtml(responseMDtex)
               document.getElementById(filename).innerHTML = responseHTML;
-              renderMathInElement(elem, delimiters=[{left: "$$", right: "$$", display: false}]);
+              renderMathInElement(elem, {delimiters:[{left: "$$", right: "$$", display: false}]});
             }
             if (this.status == 404) {
               document.getElementById(filename).innerHTML = "Page not found.";
@@ -48,7 +48,7 @@
     <div id="content">
 # Ricardo Carvalho
       
-So far it is empty...
+So far, empty...
     </div> 
   <script> 
     BODYtoMKDW('content');
