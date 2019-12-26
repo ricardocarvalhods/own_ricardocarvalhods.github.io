@@ -17,6 +17,17 @@
         console.log(txt);
         document.getElementById(divid).innerHTML = conv.makeHtml(txt);
       }
+      function loadPages(folder){
+        fetch('https://api.github.com/repos/ricardocarvalhods/ricardocarvalhods.github.io/contents/' + folder)
+          .then(response => response.json())
+          .then(data => {
+          for(data_i in data){
+            contentFromFile(folder + '/' + data[data_i].name)
+          }
+          console.log(data)
+        })
+          .catch(error => console.error(error))
+      }
       function contentFromFile(filename){
         // Create new div under body
         var elem = document.createElement('div');
@@ -29,8 +40,7 @@
           if (this.readyState == 4) {
             if (this.status == 200) {
               responseMD = this.responseText;
-              responseMDtex = responseMD //katex.renderToString(responseMD, {throwOnError: false});
-              responseHTML = conv.makeHtml(responseMDtex)
+              responseHTML = conv.makeHtml(responseMD)
               document.getElementById(filename).innerHTML = responseHTML;
               renderMathInElement(elem, {delimiters:[{left: "$", right: "$", display: false}, 
                                                      {left: "$\\", right: "\\$", display: true}]});
@@ -53,7 +63,7 @@ So far, empty...
     </div> 
   <script> 
     BODYtoMKDW('content');
-    contentFromFile('home.md');
+    loadPages('blog');
   </script>
   </body>
 </html>
