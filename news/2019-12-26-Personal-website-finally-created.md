@@ -1,6 +1,6 @@
 ### Personal website created
 
-<small>26/Dec/2019</small> by Ricardo Carvalho
+<small>Created on 26/Dec/2019 by Ricardo Carvalho</small>
 
 ---
 
