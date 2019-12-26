@@ -1,6 +1,7 @@
 ### Personal website created
 
-<small>Created on 26/Dec/2019 by Ricardo Carvalho</small>
+<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <small>26/Dec/2019</small><br/>
+<span class="glyphicon glyphicon-user" aria-hidden="true"></span> <small>Ricardo Carvalho</small>
 
 ---
 
