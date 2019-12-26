@@ -56,7 +56,7 @@
 		    final_mkdw = final_mkdw + "- **" + i_date + "**: [" + i_title + "](" + folder + "/" + data[data_i].name +  ") \n"
 		}
 		document.getElementById(folder + 'content').innerHTML = conv.makeHtml(final_mkdw);
-		console.log(final_mkdw)
+		//console.log(final_mkdw)
 	}).catch(error => console.error(error))
       }
 	    
