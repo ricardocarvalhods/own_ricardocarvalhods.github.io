@@ -8,7 +8,13 @@
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
     <script defer src="js/katex.min.js"></script>
     <script defer src="js/auto-render.min.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script>
       var conv = new showdown.Converter({emoji: true});
@@ -22,49 +28,45 @@
           .then(response => response.json())
           .then(data => {
           for(data_i in data){
-            contentFromFile(folder + '/' + data[data_i].name)
+            contentFromFile(folder + '/' + data[data_i].name, document.body)
           }
           console.log(data)
         })
           .catch(error => console.error(error))
       }
-      function contentFromFile(filename){
-        // Create new div under body
-        var elem = document.createElement('div');
-        elem.setAttribute("id", filename);
-        document.body.appendChild(elem);
-        
-        // Get file and put on new div created
-        xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4) {
-            if (this.status == 200) {
-              responseMD = this.responseText;
-              responseHTML = conv.makeHtml(responseMD)
-              document.getElementById(filename).innerHTML = responseHTML;
-              renderMathInElement(elem, {delimiters:[{left: "$", right: "$", display: false}, 
-                                                     {left: "$\\", right: "\\$", display: true}]});
-            }
-            if (this.status == 404) {
-              document.getElementById(filename).innerHTML = "Page not found.";
-            }
-          }
-        }
-        xhttp.open("GET", filename, true);
-        xhttp.send();
-      }
+      
     </script>
+    
+    <script src="js/ricardo.js"></script>
+    
   </head>
   <body>
-    <div id="content">
-# Ricardo Carvalho
-      
-So far, empty...
-    </div> 
-  <script> 
-    BODYtoMKDW('content');
-    loadPages('blog');
-  </script>
+    <div class="container-fluid">
+      <nav class="navbar navbar-default navbar-static-top" style="padding-left:50px;padding-right:50px">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Ricardo Carvalho</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <script> 
+      //BODYtoMKDW('content');
+      loadPages('blog');
+    </script>
   </body>
 </html>
 
