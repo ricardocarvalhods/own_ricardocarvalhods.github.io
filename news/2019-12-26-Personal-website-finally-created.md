@@ -1,5 +1,7 @@
 ### Welcome
 
+<small>26/Dec/2019</small> by Ricardo Carvalho
+
 ---
 
 I finally created my personal website!
