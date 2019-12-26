@@ -9,3 +9,7 @@ body {
     top: -50px;
     visibility: hidden;
 }
+
+#minhafoto {
+  border-radius: 80px;
+}
