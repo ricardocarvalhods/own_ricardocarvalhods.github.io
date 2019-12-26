@@ -29,7 +29,7 @@
           if (this.readyState == 4) {
             if (this.status == 200) {
               responseMD = this.responseText;
-              responseMDtex = katex.renderToString(responseMD, {throwOnError: false});
+              responseMDtex = responseMD //katex.renderToString(responseMD, {throwOnError: false});
               responseHTML = conv.makeHtml(responseMDtex)
               document.getElementById(filename).innerHTML = responseHTML;
             }
@@ -47,7 +47,7 @@
     <div id="content">
 # Ricardo Carvalho
 
-Empty!
+Empty!.!
     </div> 
   <script> 
     BODYtoMKDW('content');
