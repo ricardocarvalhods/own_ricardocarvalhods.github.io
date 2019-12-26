@@ -29,10 +29,17 @@
         document.getElementById(divid).innerHTML = conv.makeHtml(txt);
       }
 	    
+      function sortByName(data) {
+	 data.sort(function(a,b) {
+	   return b.name - a.name;
+	 });
+      }
+	    
       function loadTitlesFromFolder(folder){
         fetch('https://api.github.com/repos/ricardocarvalhods/ricardocarvalhods.github.io/contents/' + folder)
           .then(response => response.json())
           .then(data => {
+		sortByName(data);
 		final_mkdw = ""
 		for(data_i in data){
 		    name_split = data[data_i].name.split(".")[0].split("-");
