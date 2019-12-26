@@ -1,4 +1,6 @@
-## Welcome
+### Welcome
+
+---
 
 I finally created my personal website!
 
