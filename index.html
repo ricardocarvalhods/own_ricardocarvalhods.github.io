@@ -35,7 +35,7 @@
           .then(data => {
 		final_mkdw = ""
 		for(data_i in data){
-		    name_split = data[data_i].name.split("-");
+		    name_split = data[data_i].name.split(".")[0].split("-");
 		    i_date = ""
 		    i_title = ""
 		    for(vl in name_split){
@@ -52,7 +52,7 @@
 			    i_title = i_title + " " + name_split[vl]
 			}
 		    }
-		    final_mkdw = final_mkdw + "<br/> - \[**" + i_date + "**\]: [" + i_title + "](" + folder + "/" + data[data_i].name +  ") \n"
+		    final_mkdw = final_mkdw + "- **" + i_date + "**: [" + i_title + "](" + folder + "/" + data[data_i].name +  ".md) \n"
 		}
 		document.getElementById(folder + 'content').innerHTML = conv.makeHtml(final_mkdw);
 		console.log(final_mkdw)
