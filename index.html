@@ -54,7 +54,7 @@
 			    i_title = i_title + " " + name_split[vl]
 			}
 		    }
-		    final_mkdw = final_mkdw + "- **" + i_date + "**: [" + i_title + "](" + folder + "/" + name_without_dot +  ") \n"
+		    final_mkdw = final_mkdw + "- **" + i_date + "**: [" + i_title + "](page.html?" + folder + "/" + name_without_dot +  ") \n"
 		}
 		document.getElementById(folder + 'content').innerHTML = conv.makeHtml(final_mkdw);
 		//console.log(final_mkdw)
