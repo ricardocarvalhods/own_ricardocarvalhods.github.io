@@ -33,7 +33,7 @@
           .then(response => response.json())
           .then(data => {
 		for(data_i in data){
-			contentFromFile(folder + '/' + data[data_i].name, document.getElementById(folder))
+			contentFromFile(folder + '/' + data[data_i].name, document.getElementById(folder + 'content'))
 		}
 		console.log(data)
 	}).catch(error => console.error(error))
@@ -47,15 +47,30 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="#">Ricardo Carvalho</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#about">About</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#blog">Blog</a></li>
+          </ul>
         </div>
       </div>
     </nav>
     
-    <div class="container-fluid">
-      <div class="page-header"><h3>About</h3><div id="about"></div></div>
-      <div class="page-header"><h3>Research</h3><div id="research"></div></div>
-      <div class="page-header"><h3>Blog</h3><div id="blog"></div></div>
+    <div class="container">
+      <div id="about" class="anchor"></div><div class="page-header"><h3>About</h3><div id="aboutcontent">aaa</div></div>
+      <div id="news" class="anchor"></div><div class="page-header"><h3>About</h3><div id="newscontent">aaa</div></div>
+      <div id="research" class="anchor"></div><div class="page-header"><h3>Research</h3><div id="researchcontent">aaaa</div></div>
+      <div id="blog" class="anchor"></div><div class="page-header"><h3>Blog</h3><div id="blogcontent">aaaa</div></div>
     </div>
 	  
     <script> 
