@@ -28,9 +28,9 @@
           if (this.readyState == 4) {
             if (this.status == 200) {
               responseMD = this.responseText;
-              responseHTML = conv.makeHtml(responseMD)
-              responseHTMLtex = katex.renderToString(responseHTML, {throwOnError: false});
-              document.getElementById(filename).innerHTML = responseHTMLtex;
+              responseMDtex = katex.renderToString(responseMD, {throwOnError: false});
+              responseHTML = conv.makeHtml(responseMDtex)
+              document.getElementById(filename).innerHTML = responseHTML;
             }
             if (this.status == 404) {
               document.getElementById(filename).innerHTML = "Page not found.";
