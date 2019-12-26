@@ -36,7 +36,8 @@
 		data.sort((a, b) => (b.name > a.name) ? 1 : -1);
 		final_mkdw = ""
 		for(data_i in data){
-		    name_split = data[data_i].name.split(".")[0].split("-");
+		    name_without_dot = data[data_i].name.split(".")[0];
+		    name_split = name_without_dot.split("-");
 		    i_date = ""
 		    i_title = ""
 		    for(vl in name_split){
@@ -53,7 +54,7 @@
 			    i_title = i_title + " " + name_split[vl]
 			}
 		    }
-		    final_mkdw = final_mkdw + "- **" + i_date + "**: [" + i_title + "](" + folder + "/" + data[data_i].name +  ") \n"
+		    final_mkdw = final_mkdw + "- **" + i_date + "**: [" + i_title + "](" + folder + "/" + name_without_dot +  ") \n"
 		}
 		document.getElementById(folder + 'content').innerHTML = conv.makeHtml(final_mkdw);
 		//console.log(final_mkdw)
@@ -107,10 +108,10 @@
 	  
     <script> 
       //BODYtoMKDW('content');
-      contentFromFile("about.md", document.getElementById("aboutcontent"))
-      loadTitlesFromFolder('news');
-      //loadFolder('research');
-      //loadFolder('blog');
+      contentFromFile("about.md", document.getElementById("aboutcontent")); // Entire Page
+      loadTitlesFromFolder('news'); // Titles
+      //loadFolder('research'); // Titles
+      //loadFolder('blog'); // Titles
     </script>
   </body>
 </html>
