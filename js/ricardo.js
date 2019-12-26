@@ -1,3 +1,12 @@
+var conv = new showdown.Converter({emoji: true});
+
+
+function BODYtoMKDW(divid) {
+    var txt = document.getElementById(divid).innerHTML;
+    console.log(txt);
+    document.getElementById(divid).innerHTML = conv.makeHtml(txt);
+}
+
 function contentFromFile(filename, elemToAppend){
     // Create new div under body
     var elem = document.createElement('div');
