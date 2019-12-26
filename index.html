@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="js/jquery.min.js"></script>
+    <title>Ricardo Carvalho</title>
+    <meta name="description" content="Ricardo Carvalho - Personal Website">
+    <link id="favicon" rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/3.4/dist/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>   
+    
+    <link rel="stylesheet" href="css/ricardo.css">
+
     <script src="js/showdown.js"></script>
     <link rel="stylesheet" href="css/katex.min.css">
 
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
     <script defer src="js/katex.min.js"></script>
     <script defer src="js/auto-render.min.js"></script>
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script>
       var conv = new showdown.Converter({emoji: true});
@@ -27,42 +32,32 @@
         fetch('https://api.github.com/repos/ricardocarvalhods/ricardocarvalhods.github.io/contents/' + folder)
           .then(response => response.json())
           .then(data => {
-          for(data_i in data){
-            contentFromFile(folder + '/' + data[data_i].name, document.body)
-          }
-          console.log(data)
-        })
-          .catch(error => console.error(error))
+		for(data_i in data){
+			contentFromFile(folder + '/' + data[data_i].name, document.getElementById(folder))
+		}
+		console.log(data)
+	}).catch(error => console.error(error))
       }
-      
     </script>
     
     <script src="js/ricardo.js"></script>
     
   </head>
   <body>
-    <div class="container-fluid">
-      <nav class="navbar navbar-default navbar-static-top" style="padding-left:50px;padding-right:50px">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Ricardo Carvalho</a>
-          </div>
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-            </ul>
-          </div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Ricardo Carvalho</a>
         </div>
-      </nav>
+      </div>
+    </nav>
+    
+    <div class="container-fluid">
+      <div class="page-header"><h3>About</h3><div id="about"></div></div>
+      <div class="page-header"><h3>Research</h3><div id="research"></div></div>
+      <div class="page-header"><h3>Blog</h3><div id="blog"></div></div>
     </div>
+	  
     <script> 
       //BODYtoMKDW('content');
       loadPages('blog');
