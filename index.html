@@ -28,14 +28,14 @@
         console.log(txt);
         document.getElementById(divid).innerHTML = conv.makeHtml(txt);
       }
-      function loadPages(folder){
+      function loadFolder(folder){
         fetch('https://api.github.com/repos/ricardocarvalhods/ricardocarvalhods.github.io/contents/' + folder)
           .then(response => response.json())
           .then(data => {
 		for(data_i in data){
 			contentFromFile(folder + '/' + data[data_i].name, document.getElementById(folder + 'content'))
 		}
-		console.log(data)
+		//console.log(data)
 	}).catch(error => console.error(error))
       }
     </script>
@@ -67,15 +67,16 @@
     </nav>
     
     <div class="container">
-      <div id="about" class="anchor"></div><div class="page-header"><h3>About</h3><div id="aboutcontent">aaa</div></div>
-      <div id="news" class="anchor"></div><div class="page-header"><h3>About</h3><div id="newscontent">aaa</div></div>
-      <div id="research" class="anchor"></div><div class="page-header"><h3>Research</h3><div id="researchcontent">aaaa</div></div>
-      <div id="blog" class="anchor"></div><div class="page-header"><h3>Blog</h3><div id="blogcontent">aaaa</div></div>
+      <div id="about" class="anchor"></div><div class="page-header"><h3>About</h3><div id="aboutcontent"></div></div>
+      <div id="news" class="anchor"></div><div class="page-header"><h3>About</h3><div id="newscontent"></div></div>
+      <div id="research" class="anchor"></div><div class="page-header"><h3>Research</h3><div id="researchcontent"></div></div>
+      <div id="blog" class="anchor"></div><div class="page-header"><h3>Blog</h3><div id="blogcontent"></div></div>
     </div>
 	  
     <script> 
       //BODYtoMKDW('content');
-      loadPages('blog');
+      //loadFolder('blog');
+      contentFromFile("about.md", document.getElementById("aboutcontent"))
     </script>
   </body>
 </html>
