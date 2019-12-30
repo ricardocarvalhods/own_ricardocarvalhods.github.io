@@ -24,89 +24,25 @@
 
     <script src="js/ricardo.js"></script>
 	  
-    <script>	    
-      function loadTitlesFromFolder(folder){
-        fetch('https://api.github.com/repos/ricardocarvalhods/ricardocarvalhods.github.io/contents/' + folder)
-          .then(response => response.json())
-          .then(data => {
-		data.sort((a, b) => (b.name > a.name) ? 1 : -1);
-		final_mkdw = ""
-		for(data_i in data){
-		    name_without_dot = data[data_i].name.split(".")[0];
-		    name_split = name_without_dot.split("-");
-		    i_date = ""
-		    i_title = ""
-		    for(vl in name_split){
-			if(vl == 0){
-			    i_date = name_split[vl]	
-			}
-		        else if(vl == 1 || vl == 2){
-		            i_date = name_split[vl] + "/" + i_date
-			}
-			else if(vl == 3){
-			    i_title = name_split[vl]
-			}
-			else if(vl > 3){
-			    i_title = i_title + " " + name_split[vl]
-			}
-		    }
-		    final_mkdw = final_mkdw + "- **" + i_date + "**: [" + i_title + "](page?" + folder + "/" + name_without_dot +  ") \n"
-		}
-		document.getElementById(folder + 'content').innerHTML = conv.makeHtml(final_mkdw);
-		//console.log(final_mkdw)
-	}).catch(error => console.error(error))
-      }
-	    
-      function loadFolder(folder){
-        fetch('https://api.github.com/repos/ricardocarvalhods/ricardocarvalhods.github.io/contents/' + folder)
-          .then(response => response.json())
-          .then(data => {
-		for(data_i in data){
-			contentFromFile(folder + '/' + data[data_i].name, document.getElementById(folder + 'content'))
-		}
-		//console.log(data)
-	}).catch(error => console.error(error))
-      }
-    </script>
-    
+    <script> 
+       $(function(){
+	  $("#header").load("html/header.html"); 
+	  $("#footer").load("html/footer.html"); 
+       });
+    </script> 
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Ricardo Carvalho</a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#about">About</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#blog">Blog</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div id="header"></div>
     
-    <div class="container">
-      <div id="about" class="anchor"></div><div class="page-header"><h3>About</h3><div id="aboutcontent" class="row"></div></div>
-      <div id="news" class="anchor"></div><div class="page-header"><h3>News</h3><div id="newscontent" class="row"></div></div>
-      <div id="research" class="anchor"></div><div class="page-header"><h3>Research</h3><div id="researchcontent" class="row"></div></div>
-      <div id="blog" class="anchor"></div><div class="page-header"><h3>Blog</h3><div id="blogcontent" class="row"></div></div>
-    </div>
-	  
     <script> 
       //BODYtoMKDW('content');
-      contentFromFile("about.md", document.getElementById("aboutcontent")); // Entire Page
-      loadTitlesFromFolder('news'); // Titles
+      contentFromFile("content/pages/about.md", document.getElementById("aboutcontent")); // Entire Page
+      loadTitlesFromFolder("content/news"); // Titles
       //loadFolder('research'); // Load all for each one, having Title + Thumbnails + Links (PDF, BIB) + Blog post reference
       //loadTitlesWithThumbnailsFromFolder('blog'); // Titles with Thumbnails
     </script>
+	  
+    <div id="footer"></div>
   </body>
 </html>
 
