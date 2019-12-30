@@ -7,24 +7,19 @@ body {
   -moz-font-feature-settings:"kern" 1;
   -o-font-feature-settings:"kern" 1;
   font-feature-settings:"kern" 1;
-  font-kerning:normal
-}
+  font-kerning:normal;
+  
+  margin-right: auto;
+  margin-left: auto;
 
-.wrapper {
-    max-width: -webkit-calc(1280px - (30px * 2));
-    max-width: calc(1280px - (30px * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 30px;
-    padding-left: 30px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 @media screen and (max-width: 800px){
-  .wrapper{
-    max-width:-webkit-calc(800px - (30px));
-    max-width:calc(800px - (30px));
-    padding-right:15px;
-    padding-left:15px}
+  body{
+    padding-right:0px;
+    padding-left:0px}
 }
 
 figure{
