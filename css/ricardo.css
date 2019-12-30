@@ -10,6 +10,15 @@ body {
   font-kerning:normal
 }
 
+
+@media screen and (max-width: 800px){
+  .wrapper{
+    max-width:-webkit-calc(800px - (30px));
+    max-width:calc(800px - (30px));
+    padding-right:15px;
+    padding-left:15px}
+}
+
 .wrapper {
     max-width: -webkit-calc(1280px - (30px * 2));
     max-width: calc(1280px - (30px * 2));
