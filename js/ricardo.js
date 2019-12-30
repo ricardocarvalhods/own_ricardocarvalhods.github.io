@@ -32,3 +32,46 @@ function contentFromFile(filename, elemToAppend){
     xhttp.open("GET", filename, true);
     xhttp.send();
 }
+
+function loadTitlesFromFolder(folder){
+    fetch('https://api.github.com/repos/ricardocarvalhods/ricardocarvalhods.github.io/contents/' + folder)
+      .then(response => response.json())
+      .then(data => {
+    data.sort((a, b) => (b.name > a.name) ? 1 : -1);
+    final_mkdw = ""
+    for(data_i in data){
+        name_without_dot = data[data_i].name.split(".")[0];
+        name_split = name_without_dot.split("-");
+        i_date = ""
+        i_title = ""
+        for(vl in name_split){
+        if(vl == 0){
+            i_date = name_split[vl]	
+        }
+            else if(vl == 1 || vl == 2){
+                i_date = name_split[vl] + "/" + i_date
+        }
+        else if(vl == 3){
+            i_title = name_split[vl]
+        }
+        else if(vl > 3){
+            i_title = i_title + " " + name_split[vl]
+        }
+        }
+        final_mkdw = final_mkdw + "- **" + i_date + "**: [" + i_title + "](page?" + folder + "/" + name_without_dot +  ") \n"
+    }
+    document.getElementById(folder + 'content').innerHTML = conv.makeHtml(final_mkdw);
+    //console.log(final_mkdw)
+    }).catch(error => console.error(error))
+ }
+
+function loadFolder(folder){
+    fetch('https://api.github.com/repos/ricardocarvalhods/ricardocarvalhods.github.io/contents/' + folder)
+      .then(response => response.json())
+      .then(data => {
+    for(data_i in data){
+        contentFromFile(folder + '/' + data[data_i].name, document.getElementById(folder + 'content'))
+    }
+    //console.log(data)
+    }).catch(error => console.error(error))
+}
