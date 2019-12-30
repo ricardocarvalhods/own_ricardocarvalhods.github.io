@@ -4,4 +4,6 @@ Before joining SFU, I worked as a Senior Data Scientist for the Brazilian Govern
 
 I also worked for almost a year as Data Science Manager at the Observatory of Public Spending (ODP), leading more than 15 data professionals on projects related to data science, fraud prediction and auditing. 
 
-<a href="../CV.pdf">Click here</a> for full CV.
+<a href="../CV.pdf">Click here</a> for full curriculum vitae. 
+
+If you have any questions or want to discuss possible collaboration, [feel free to reach out](../../html/page?content/pages/contact).
