@@ -60,7 +60,7 @@ function loadTitlesFromFolder(folder){
         }
         final_mkdw = final_mkdw + "- **" + i_date + "**: [" + i_title + "](page?" + folder + "/" + name_without_dot +  ") \n"
     }
-    document.getElementById(folder + 'content').innerHTML = conv.makeHtml(final_mkdw);
+    document.getElementById(folder).innerHTML = conv.makeHtml(final_mkdw);
     //console.log(final_mkdw)
     }).catch(error => console.error(error))
  }
