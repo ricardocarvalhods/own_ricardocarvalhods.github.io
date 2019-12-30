@@ -2,7 +2,6 @@ body {
   padding-top: 30px;
   font:400 16px/1.5 "Lora",serif;
   color:#111;
-  background-color:#fdfdfd;
   -webkit-text-size-adjust:100%;
   -webkit-font-feature-settings:"kern" 1;
   -moz-font-feature-settings:"kern" 1;
@@ -10,7 +9,6 @@ body {
   font-feature-settings:"kern" 1;
   font-kerning:normal
 }
-
 
 figure{
   margin:0;
@@ -22,8 +20,4 @@ figure{
     position: relative;
     top: -50px;
     visibility: hidden;
-}
-
-#minhafoto {
-  border-radius: 80px;
 }
