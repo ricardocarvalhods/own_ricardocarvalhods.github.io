@@ -1,6 +1,6 @@
 body {
   padding-top: 30px;
-  font:400 16px/1.5 "Lora",serif;
+  font:400 18px/1.5 "Lora",serif;
   color:#111;
   -webkit-text-size-adjust:100%;
   -webkit-font-feature-settings:"kern" 1;
@@ -32,4 +32,11 @@ figure{
     position: relative;
     top: -50px;
     visibility: hidden;
+}
+
+.footer {
+   position: bottom;
+   margin-top: 50px;
+   width: 100%;
+   text-align: center;
 }
