@@ -35,12 +35,9 @@ figure{
 }
 
 .footer {
-   position: bottom;
    width: 100%;
    background-color: #f2f2f2;
    text-align: center;
-   padding-right:-30px !important;
-   padding-left:-30px !important;
-   margin-right:0px !important;
-   margin-left:0px !important;
+   padding-right:-45px;
+   padding-left:-45px;
 }
