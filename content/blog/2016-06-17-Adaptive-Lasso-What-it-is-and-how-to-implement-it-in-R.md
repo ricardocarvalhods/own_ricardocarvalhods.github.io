@@ -1,4 +1,4 @@
-### Adaptive Lasso: What it is and how to implement in R"
+## Adaptive Lasso: What it is and how to implement in R"
 
 <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <small style="color:gray">Jun 17, 2016</small>
 <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <small style="color:gray">Ricardo Carvalho</small><br/>
@@ -11,7 +11,7 @@ Lasso was introduced <a href='../../html/page?content/blog/2016-06-14-How-to-use
 
 ---
 
-## Oracle Procedure
+### Oracle Procedure
 
 Before we enter the Adaptive Lasso it is important to know what is a procedure known as "Oracle".
 
@@ -48,7 +48,7 @@ Whereas $\gamma$ is a positive constant for adjustment of the Adaptive Weights v
 
 ---
 
-## Adaptive Lasso in R
+### Adaptive Lasso in R
 
 To run Adaptive Lasso in R, we will use the glmnet package, performing <a href='../../html/page?content/blog/2016-06-14-How-to-use-Ridge-Regression-and-Lasso-in-R'>Ridge Regression</a> to create the Adaptive Weights vector, as shown below.
 
