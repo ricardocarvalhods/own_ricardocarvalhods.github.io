@@ -92,6 +92,9 @@ function loadTitlesFromFolder(folder){
         final_mkdw = final_mkdw + "- **" + i_date + "**: [" + i_title + "](html/page?" + folder + "/" + name_without_dot +  ") " + counter_html  + " \n"
     }
     document.getElementById(folder).innerHTML = conv.makeHtml(final_mkdw);
+    
+    DISQUSWIDGETS.getCount({reset: true});
+    
     //console.log(final_mkdw)
     }).catch(error => console.error(error))
  }
