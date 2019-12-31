@@ -68,34 +68,43 @@ function loadTitlesFromFolder(folder){
       .then(response => response.json())
       .then(data => {
     data.sort((a, b) => (b.name > a.name) ? 1 : -1);
-    final_mkdw = ""
+    final_mkdw = "";
+    i_current = 1;
     for(data_i in data){
+        if(i_current < data.length){
+          add_br = "<br/>"
+        }
+        else {
+          add_br = ""
+        }
+        i_current = i_current + 1
+      
         name_without_dot = data[data_i].name.split(".")[0];
         name_split = name_without_dot.split("-");
         i_date = ""
         i_title = ""
         for(vl in name_split){
-        if(vl == 0){
-            i_date = name_split[vl]	
-        }
-            else if(vl == 1 || vl == 2){
-                i_date = name_split[vl] + "/" + i_date
-        }
-        else if(vl == 3){
-            i_title = name_split[vl]
-        }
-        else if(vl > 3){
-            i_title = i_title + " " + name_split[vl]
-        }
+            if(vl == 0){
+                i_date = name_split[vl]	
+            }
+                else if(vl == 1 || vl == 2){
+                    i_date = name_split[vl] + "/" + i_date
+            }
+            else if(vl == 3){
+                i_title = name_split[vl]
+            }
+            else if(vl > 3){
+                i_title = i_title + " " + name_split[vl]
+            }
         }
         var dateParts = i_date.split("/");
         var new_i_date = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
         const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         parsed_i_date = monthNames[new_i_date.getMonth()] + " " + new_i_date.getDate() + ", " + new_i_date.getFullYear();
-          
+        
         counter_html = ""
         //counter_html = " &nbsp; &middot; &nbsp; <i class='fa fa-comments'></i> <span class='disqus-comment-count' data-disqus-identifier='ricardocarvalhods/html/page?" + folder + "/" + name_without_dot + "'> Comments</span>"
-        final_mkdw = final_mkdw + "[" + i_title + "](html/page?" + folder + "/" + name_without_dot +  ") " + counter_html  + " <br/> <small style='color:gray'>" + parsed_i_date + "</small>" + " <br/><br/>"
+        final_mkdw = final_mkdw + "[" + i_title + "](html/page?" + folder + "/" + name_without_dot +  ") " + counter_html  + " <br/> <small style='color:gray'>" + parsed_i_date + "</small>" + " <br/>" + add_br + ""
     }
     document.getElementById(folder).innerHTML = conv.makeHtml(final_mkdw);
     
