@@ -13,11 +13,12 @@
 argsurl = window.location.search.substr(1)
   
 if(argsurl != ""){
-    permalink = "https://ricardocarvalhods.github.io/html/page?" + argsurl
+    url_permalink = "https://ricardocarvalhods.github.io/html/page?" + argsurl
+    pg_identifier = "ricardocarvalhods/html/page?" + argsurl
 
     var disqus_config = function () {
-      this.page.url = permalink;  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = permalink; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = url_permalink;  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = pg_identifier; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 
     (function() { // DON'T EDIT BELOW THIS LINE
