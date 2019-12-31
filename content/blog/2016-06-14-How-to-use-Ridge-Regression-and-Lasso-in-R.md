@@ -24,7 +24,7 @@ where $\lambda$ is the tuning parameter, $\beta_j$ are the estimated coefficient
 
 To perform Ridge Regression in R, we will use the glmnet package, developed by the creators of the algorithm.
 
-```{R}
+```r
 require(glmnet)
 # Data = considering that we have a data frame named dataF, with its first column being the class
 x <- as.matrix(dataF[,-1]) # Removes class
@@ -61,7 +61,7 @@ where $\lambda$ is the tuning parameter, $$\beta_j$$ are the estimated coefficie
 
 To perform Lasso in R, we will use the glmnet package, developed by the creators of the algorithm.
 
-```{R}
+```r
 require(glmnet)
 # Data = considering that we have a data frame named dataF, with its first column being the class
 x <- as.matrix(dataF[,-1]) # Removes class
