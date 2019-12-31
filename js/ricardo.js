@@ -19,10 +19,11 @@ function contentFromFile(filename, elemToAppend){
       if (this.readyState == 4) {
         if (this.status == 200) {
           responseMD = this.responseText;
-          responseHTML = conv.makeHtml(responseMD)
-          document.getElementById(filename).innerHTML = responseHTML;
+          document.getElementById(filename).innerHTML = responseMD;
           renderMathInElement(elem, {delimiters:[{left: "$", right: "$", display: false}, 
                                                  {left: "$\\", right: "\\$", display: true}]});
+          responseHTML = conv.makeHtml(document.getElementById(filename).innerHTML)
+          document.getElementById(filename).innerHTML = responseHTML
         }
         if (this.status == 404) {
           document.getElementById(filename).innerHTML = "Page not found.";
