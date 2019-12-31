@@ -1,6 +1,6 @@
 ### Personal website created
 
-<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <small style="color:gray">Dec 26, 2019</small><br/>
+<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <small style="color:gray">Dec 26, 2019</small>
 <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <small style="color:gray">Ricardo Carvalho</small><br/>
 
 ---
