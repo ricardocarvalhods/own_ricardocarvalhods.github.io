@@ -39,6 +39,14 @@ cv.ridge$lambda.1se
 coef(cv.ridge, s=cv.ridge$lambda.min)
 ```
 
+mais um
+
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+
 testando
 
 ```python
