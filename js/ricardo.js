@@ -1,4 +1,4 @@
-var conv = new showdown.Converter({emoji: true, simpleLineBreaks:true});
+var conv = new showdown.Converter({emoji: true, underline:true});
 
 
 function BODYtoMKDW(divid) {
@@ -19,11 +19,10 @@ function contentFromFile(filename, elemToAppend){
       if (this.readyState == 4) {
         if (this.status == 200) {
           responseMD = this.responseText;
-          document.getElementById(filename).innerHTML = responseMD;
+          responseHTML = conv.makeHtml(responseMD)
+          document.getElementById(filename).innerHTML = responseHTML;
           renderMathInElement(elem, {delimiters:[{left: "$", right: "$", display: false}, 
                                                  {left: "$\\", right: "\\$", display: true}]});
-          responseHTML = conv.makeHtml(document.getElementById(filename).innerHTML)
-          document.getElementById(filename).innerHTML = responseHTML
         }
         if (this.status == 404) {
           document.getElementById(filename).innerHTML = "Page not found.";
