@@ -26,6 +26,8 @@ showdown.extension('codehighlight', function() {
   ];
 });
 
+showdown.setFlavor('github');
+
 var conv = new showdown.Converter({emoji: true, underline:true, extensions: ['codehighlight']});
 
 
