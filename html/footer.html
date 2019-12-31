@@ -1,6 +1,9 @@
 
 
-<div id="disqus_thread"></div>
+<div id="disqus_container_main" class="container">
+  <div id="disqus_thread"></div>
+</div>
+
 <script>
 
 /**
@@ -25,8 +28,7 @@ if(argsurl != ""){
     })();
 }
 else {
-  //document.getElementById("disqus_thread").remove();
-  console.log("REMOVE IT!");
+  document.getElementById("disqus_container_main").remove();
 }
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
