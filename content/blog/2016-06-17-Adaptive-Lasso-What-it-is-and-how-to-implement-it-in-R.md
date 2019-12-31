@@ -7,11 +7,7 @@
 
 Adaptive Lasso is an evolution of the Lasso. Let's see briefly how it improves Lasso and show the code needed to run it in R!
 
----
-
 Lasso was introduced <a href='../../html/page?content/blog/2016-06-14-How-to-use-Ridge-Regression-and-Lasso-in-R'>in this post</a>, in case you don't know the method, please read about it <a href='../../html/page?content/blog/2016-06-14-How-to-use-Ridge-Regression-and-Lasso-in-R'>here</a> before!
-
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 ---
 
