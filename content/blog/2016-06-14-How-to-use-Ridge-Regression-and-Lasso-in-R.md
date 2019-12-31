@@ -1,7 +1,7 @@
 
 ## How to use Ridge Regression and Lasso in R
 
-<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <small style="color:gray">Jun 14, 2016</small><br/>
+<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <small style="color:gray">Jun 14, 2016</small>
 <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <small style="color:gray">Ricardo Carvalho</small><br/>
 
 ---
