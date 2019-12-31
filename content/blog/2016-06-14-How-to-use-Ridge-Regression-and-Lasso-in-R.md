@@ -1,4 +1,3 @@
-
 ## How to use Ridge Regression and Lasso in R
 
 <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <small style="color:gray">Jun 14, 2016</small>
@@ -37,28 +36,6 @@ plot(cv.ridge)
 cv.ridge$lambda.min
 cv.ridge$lambda.1se
 coef(cv.ridge, s=cv.ridge$lambda.min)
-```
-
-mais um
-
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
-
-testando
-
-```python
-for i in range(1, 10):
-  print(str(i+1))
-
-def nova_fun(aaa):
-  return(aaa+1)
-
-nova_fun(1)
-
-x = 1 + y
 ```
 
 In the above code, we execute logistic regression (note the family='binomial'), in parallel (if a cluster or cores have been previously allocated), internally standardizing (needed for more appropriate regularization) and wanting to observe the results of AUC (area under ROC curve). Moreover, the method already performs 10-fold cross validation to choose the best $\lambda$.
