@@ -88,7 +88,7 @@ function loadTitlesFromFolder(folder){
             i_title = i_title + " " + name_split[vl]
         }
         }      
-        counter_html = "<span class='disqus-comment-count' data-disqus-identifier='ricardocarvalhods/html/page?" + folder + "/" + name_without_dot + "'> &middot; Post a Comment</span>"
+        counter_html = " &middot; <i class='far fa-comment'></i> <span class='disqus-comment-count' data-disqus-identifier='ricardocarvalhods/html/page?" + folder + "/" + name_without_dot + "'> Post a Comment</span>"
         final_mkdw = final_mkdw + "- **" + i_date + "**: [" + i_title + "](html/page?" + folder + "/" + name_without_dot +  ") " + counter_html  + " \n"
     }
     document.getElementById(folder).innerHTML = conv.makeHtml(final_mkdw);
