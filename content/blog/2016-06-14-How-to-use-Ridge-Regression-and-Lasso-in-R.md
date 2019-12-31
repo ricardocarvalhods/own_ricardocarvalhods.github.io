@@ -18,13 +18,13 @@ Ridge Regression is a regularization method that tries to avoid overfitting, pen
 
 In a linear regression, in practice it means we are minimizing the RSS (Residual Sum of Squares) added to the L2 Norm. Thus, we seek to minimize:
 
-$$ RSS(\beta) + \lambda \sum_{j=1}^{p} \beta_j^2 $$
+$RSS(\beta) + \lambda \sum_{j=1}^{p} \beta_j^2$
 
-where $$\lambda$$ is the tuning parameter, $$\beta_j$$ are the estimated coefficients, existing $$p$$ of them.
+where $\lambda$ is the tuning parameter, $\beta_j$ are the estimated coefficients, existing $p$ of them.
 
 To perform Ridge Regression in R, we will use the glmnet package, developed by the creators of the algorithm.
 
-```R
+```{R}
 require(glmnet)
 # Data = considering that we have a data frame named dataF, with its first column being the class
 x <- as.matrix(dataF[,-1]) # Removes class
@@ -41,9 +41,9 @@ cv.ridge$lambda.1se
 coef(cv.ridge, s=cv.ridge$lambda.min)
 ```
 
-In the above code, we execute logistic regression (note the family='binomial'), in parallel (if a cluster or cores have been previously allocated), internally standardizing (needed for more appropriate regularization) and wanting to observe the results of AUC (area under ROC curve). Moreover, the method already performs 10-fold cross validation to choose the best $$\lambda$$.
+In the above code, we execute logistic regression (note the family='binomial'), in parallel (if a cluster or cores have been previously allocated), internally standardizing (needed for more appropriate regularization) and wanting to observe the results of AUC (area under ROC curve). Moreover, the method already performs 10-fold cross validation to choose the best $\lambda$.
 
-At the end, there are some useful commands to verify the results, like plots of the AUC results and values of minimum $$\lambda$$ (for minimum AUC) and 1 std. error (for AUC lower than minimum by one standard deviation).
+At the end, there are some useful commands to verify the results, like plots of the AUC results and values of minimum $\lambda$ (for minimum AUC) and 1 std. error (for AUC lower than minimum by one standard deviation).
 
 ---
 
@@ -55,13 +55,13 @@ This method has as great advantage the fact that it can shrink some of the coeff
 
 In a linear regression, in practice for the Lasso, it means we are minimizing the RSS (Residual Sum of Squares) added to the L1 Norm. Thus, we seek to minimize:
 
-$$ RSS(\beta) + \lambda \sum_{j=1}^{p} |\beta_j| $$
+$RSS(\beta) + \lambda \sum_{j=1}^{p} |\beta_j|$
 
-where $$\lambda$$ is the tuning parameter, $$\beta_j$$ are the estimated coefficients, existing $$p$$ of them.
+where $\lambda$ is the tuning parameter, $$\beta_j$$ are the estimated coefficients, existing $p$ of them.
 
 To perform Lasso in R, we will use the glmnet package, developed by the creators of the algorithm.
 
-```R
+```{R}
 require(glmnet)
 # Data = considering that we have a data frame named dataF, with its first column being the class
 x <- as.matrix(dataF[,-1]) # Removes class
@@ -79,9 +79,9 @@ cv.lasso$lambda.1se
 coef(cv.lasso, s=cv.lasso$lambda.min)
 ```
 
-In the above code, we execute logistic regression (note the family='binomial'), in parallel (if a cluster or cores have been previously allocated), internally standardizing (needed for more appropriate regularization) and wanting to observe the results of AUC (area under ROC curve). Moreover, the method already performs 10-fold cross validation to choose the best $$\lambda$$.
+In the above code, we execute logistic regression (note the family='binomial'), in parallel (if a cluster or cores have been previously allocated), internally standardizing (needed for more appropriate regularization) and wanting to observe the results of AUC (area under ROC curve). Moreover, the method already performs 10-fold cross validation to choose the best $\lambda$.
 
-At the end, there are some useful commands to verify the results, like plots of the AUC results and values of minimum $$\lambda$$ (for minimum AUC) and 1 std. error (for AUC lower than minimum by one standard deviation).
+At the end, there are some useful commands to verify the results, like plots of the AUC results and values of minimum $\lambda$ (for minimum AUC) and 1 std. error (for AUC lower than minimum by one standard deviation).
 
 ---
 
