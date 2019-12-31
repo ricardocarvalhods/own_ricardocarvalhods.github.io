@@ -8,8 +8,6 @@
 
 In a very simple and direct way, after a brief introduction of the methods, we will see how to run Ridge Regression and Lasso using R!
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
 ---
 
 ### Ridge Regression in R
