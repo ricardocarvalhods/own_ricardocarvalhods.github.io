@@ -1,4 +1,4 @@
-var conv = new showdown.Converter({emoji: true});
+var conv = new showdown.Converter({emoji: true, simpleLineBreaks:true});
 
 
 function BODYtoMKDW(divid) {
