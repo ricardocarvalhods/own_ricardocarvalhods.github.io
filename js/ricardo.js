@@ -88,9 +88,14 @@ function loadTitlesFromFolder(folder){
             i_title = i_title + " " + name_split[vl]
         }
         }
+        var dateParts = i_date.split("/");
+        var new_i_date = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        parsed_i_date = monthNames[new_i_date.getMonth()] + " " + new_i_date.getDate() + ", " + new_i_date.getFullYear();
+          
         counter_html = ""
         //counter_html = " &nbsp; &middot; &nbsp; <i class='fa fa-comments'></i> <span class='disqus-comment-count' data-disqus-identifier='ricardocarvalhods/html/page?" + folder + "/" + name_without_dot + "'> Comments</span>"
-        final_mkdw = final_mkdw + "- **" + i_date + "**: [" + i_title + "](html/page?" + folder + "/" + name_without_dot +  ") " + counter_html  + " \n"
+        final_mkdw = final_mkdw + "[" + i_title + "](html/page?" + folder + "/" + name_without_dot +  ") " + counter_html  + " <br/> <small style='color:gray'>" + parsed_i_date + "</small>" + " \n"
     }
     document.getElementById(folder).innerHTML = conv.makeHtml(final_mkdw);
     
