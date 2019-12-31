@@ -87,8 +87,9 @@ function loadTitlesFromFolder(folder){
         else if(vl > 3){
             i_title = i_title + " " + name_split[vl]
         }
-        }
-        final_mkdw = final_mkdw + "- **" + i_date + "**: [" + i_title + "](html/page?" + folder + "/" + name_without_dot +  ") <a href='https://ricardocarvalhods.github.io/html/page?" + folder + "/" + name_without_dot +  "#disqus_thread'>Post comments</a> \n"
+        }      
+        counter_html = "<span class='disqus-comment-count' data-disqus-identifier='https://ricardocarvalhods.github.io/html/page?" + folder + "/" + name_without_dot + "'>Post a Comment</span>"
+        final_mkdw = final_mkdw + "- **" + i_date + "**: [" + i_title + "](html/page?" + folder + "/" + name_without_dot +  ") " + counter_html  + " \n"
     }
     document.getElementById(folder).innerHTML = conv.makeHtml(final_mkdw);
     //console.log(final_mkdw)
