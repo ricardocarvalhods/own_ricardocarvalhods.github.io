@@ -1,5 +1,5 @@
 
-### "How to use Ridge Regression and Lasso in R"
+## How to use Ridge Regression and Lasso in R
 
 <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <small style="color:gray">Jun 14, 2016</small><br/>
 <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <small style="color:gray">Ricardo Carvalho</small><br/>
@@ -12,7 +12,7 @@ In a very simple and direct way, after a brief introduction of the methods, we w
 
 ---
 
-## Ridge Regression in R
+### Ridge Regression in R
 
 Ridge Regression is a regularization method that tries to avoid overfitting, penalizing large coefficients through the L2 Norm. For this reason, it is also called L2 Regularization.
 
@@ -47,7 +47,7 @@ At the end, there are some useful commands to verify the results, like plots of 
 
 ---
 
-## Lasso in R
+### Lasso in R
 
 Now let's move to the Lasso! Lasso is also a regularization method that tries to avoid overfitting penalizing large coefficients, but it uses the L1 Norm. For this reason, it is also called L1 Regularization.
 
